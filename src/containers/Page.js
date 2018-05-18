@@ -13,6 +13,7 @@ const PageStyle = StyleSheet.create({
     backgroundColor: style.color.background,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 10,
   },
   linearGradient: {
     flex: 1,

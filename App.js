@@ -1,12 +1,13 @@
 import React from 'react';
-import { Font } from 'expo';
+import { Font, AppLoading } from "expo";
+import { Root } from "native-base";
 import Scenes from './src/Scenes'
 
 export default class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            fontLoaded: false,
+            loading: true,
         }
     }
     async componentDidMount() {
@@ -17,13 +18,22 @@ export default class App extends React.Component {
           'RobotoRegular': require('./assets/fonts/Roboto-Regular.ttf'),
           'RobotoLight': require('./assets/fonts/Roboto-Light.ttf'),
         });
-        this.setState({ fontLoaded: true });
+        this.setState({ loading: false });
     }
   	render() {
-        return (
-            (this.state.fontLoaded && 
-                <Scenes /> 
+          if (this.state.loading) {
+            return (
+              <Root>
+                <AppLoading /> 
+              </Root>
             )
-        )   
+        }
+        else{
+          return (
+            <Root>
+              <Scenes />
+           </Root>
+          )
+        }
   	}
 }

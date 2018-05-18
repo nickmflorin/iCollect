@@ -1,14 +1,21 @@
 export const color = {
-    main: "rgb(99,139,250)",
+    
     blue : '#4A90E2',
-    white: {
-        normal : "#ffffff",
+    white: "#ffffff",
+    primary : '#4A4A4A',
+
+    border : {
+        gray : '#E0E0E0',
     },
     gray : {
-        accent : "#A5A7A9",
+        tint : "#A5A7A9",
         normal : "#ccc",
         light : "#eaeaea"
     },
+
+    main: "rgb(99,139,250)",
+    
+    
     brown : {
         tint : "#c7a38e",
         accent : "#E6DFDA",
@@ -28,4 +35,4 @@ export const color = {
     activity : "#ccc",
 }
 
-color.background =  color.white.normal;
+color.background =  color.white;

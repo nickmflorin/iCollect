@@ -12,6 +12,7 @@ import ForgotPassword from './containers/auth/ForgotPassword'
 
 import NewCollection from './containers/collections/NewCollection'
 import ViewCollection from './containers/collections/ViewCollection'
+import ViewCollectionItem from './containers/collections/ViewCollectionItem'
 import ViewCollections from './containers/collections/ViewCollections'
 
 const ConnectedRouter = connect()(Router);
@@ -51,12 +52,17 @@ export default class Scenes extends React.Component {
                                 <Scene key="Register" component={Register} title="Register" back/>
                                 <Scene key="ForgotPassword" component={ForgotPassword} title="Forgot Password" back/>
                             </Stack>
-                            <Stack key="Main" initial={this.state.isLoggedIn} hideNavBar>
-                                <Stack key="Home" initial={true}>
-                                    <Scene key="ViewCollections" component={ViewCollections} title="Your Collections" initial={true}/>
-                                    <Scene key="NewCollection" component={NewCollection} title="New Collection" back/>
-                                    <Scene key="ViewCollection" component={ViewCollection} title="View Collection" back/>
-                                </Stack>
+                            <Stack key="Main" initial={this.props.isLoggedIn}>
+                                <Scene key="ViewCollections" component={ViewCollections} title="Your Collections" initial={true}/>
+                                <Scene key="NewCollection" component={NewCollection} title="New Collection" back/>
+                                <Scene key="ViewCollectionItem" component={ViewCollectionItem} title="Your Collection Item" back/>
+                                <Scene key="ViewCollection" 
+                                    component={ViewCollection} 
+                                    title="View Collection" 
+                                    rightTitle="New"
+                                    onRight={()=>Actions.NewCollection()}
+                                    back
+                                />
                             </Stack>
                        </Scene>
                      </ConnectedRouter>

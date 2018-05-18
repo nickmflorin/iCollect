@@ -31,3 +31,24 @@ export const tabs = {
 	}
 }
 
+export const center = {
+	alignItems: 'center',
+    justifyContent: 'center',
+}
+
+export const border = {
+	gray : {
+		borderColor: color.border.gray,
+        borderWidth: 1,
+	}
+}
+
+export const full_size = {
+  width: '100%',
+  height: '100%',
+}
+
+export const debug = {
+	borderWidth: 1.0,
+    borderColor: 'red',
+}
